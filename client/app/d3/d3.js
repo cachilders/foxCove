@@ -49,7 +49,6 @@ angular.module('d3directive', [])
           .value(function(d) {
             return d.rate;
           })
-          // .startAngle();
 
         function render(data){
 
@@ -68,7 +67,8 @@ angular.module('d3directive', [])
           var g = svg.selectAll('.arc')
             .data(pie(data)).enter()
             .append("g")
-            .attr('r', radius).attr('class', 'arc')
+            .attr('r', radius).attr('class', 'arc');
+
 
           g.append('path')
             .attr('d', arc)
@@ -78,7 +78,7 @@ angular.module('d3directive', [])
             .append("svg:title")
             .text(function(d){
               return d.data.name + ': ' + d.data.rate + '%';
-            })
+            });
 
           svg.selectAll('.canvas')
             .style('height', '100%')

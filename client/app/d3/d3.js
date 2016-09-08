@@ -16,11 +16,6 @@ angular.module('d3directive', [])
         var color = d3.scaleOrdinal()
           .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
-        var pie = d3.pie()
-          .sort(null)
-          .value(function(d) {
-            return d.rate;
-          });
         var svg = d3.select(element[0])
           .append('svg')
           .style('width', '100%')
@@ -54,7 +49,6 @@ angular.module('d3directive', [])
           .value(function(d) {
             return d.rate;
           })
-          .startAngle();
 
         function render(data){
 
@@ -73,7 +67,8 @@ angular.module('d3directive', [])
           var g = svg.selectAll('.arc')
             .data(pie(data)).enter()
             .append("g")
-            .attr('r', radius).attr('class', 'arc')
+            .attr('r', radius).attr('class', 'arc');
+
 
           g.append('path')
             .attr('d', arc)
@@ -83,7 +78,7 @@ angular.module('d3directive', [])
             .append("svg:title")
             .text(function(d){
               return d.data.name + ': ' + d.data.rate + '%';
-            })
+            });
 
           svg.selectAll('.canvas')
             .style('height', '100%')

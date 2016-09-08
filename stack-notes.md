@@ -3,11 +3,14 @@
 ##Node/Express
   With a couple handfuls of API calls, the server is the backbone of our system. Routing and streaming maps to the file system are most of what there is to see here.
 
-##Angular(1)
+##Angular (1)
   Directives. Factories. Controllers. All that. This site is one hundred percent Angular on the client side.
 
 ##UI-Router
   Sure, it's a thing to say, but with nested viewports and tight routing we're adopters.
+
+##Foundation (6 for Sites)
+  While all of our trademark style classes were handwritten by the Foxcove team, the responsive grid is entirely the work of Foundation. Much love.
 
 ##MongoDB (Mongoose/MongoLabs)
   MDB is our catch all data solution. We're using it for sitewide user commenting and for caching resource intensive API calls in multiple systems.

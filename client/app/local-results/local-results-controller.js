@@ -23,6 +23,9 @@ angular.module('app.localResults', [])
     if ($scope.location.match(/^\d{5}$/)) { // Validate 5-digit input
       Location.getRepFromZip($scope.location)
         .then(function(results){
+          if (results.reps.length < 1) {
+            $scope.nope();
+          }
           $scope.reps = Location.repsObject.reps.reps;
           $scope.reps.forEach(function(rep) {
             rep.thumb = 'http://theunitedstates.io/images/congress/225x275/' + rep.bioguide_id + '.jpg';

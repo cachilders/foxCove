@@ -1,0 +1,213 @@
+body {
+	background-color : #FBF7EB;
+}
+
+.foxCoveTitle,
+.foxCoveTitle:hover,
+.foxCoveTitle.visited,
+.foxCoveTitle:link,
+.foxCoveTitle:active,
+.foxCoveTitle:visited {
+	color : #FF6526;
+}
+
+.link:hover {
+  color : #000000;
+	cursor: pointer;
+}
+
+.link:hover {
+  color : #FF6526;
+	cursor: pointer;
+}
+
+.comments {
+	padding: 0 5% 0 5%;
+	width: 750;
+}
+
+/* Federal rep thumb style */
+
+.circular {
+	height                : 100px;
+	width                 : 100px;
+	cursor                : pointer;
+	border-radius         : 60px;
+	-webkit-border-radius : 60px;
+	-moz-border-radius    : 60px;
+}
+
+.resize {
+	position            : relative;
+	width               : 100px;
+	height              : 100px;
+	display             : block;
+	background-size     : 100px auto;
+	background-position : 55% 55%;
+}
+
+/* Local rep thumb style */
+
+.matrix-square {
+	height                : 100px;
+	width                 : 100px;
+	cursor                : pointer;
+	border-style          : solid;
+	border-width          : 1px;
+	border-radius         : 15px;
+	-webkit-border-radius : 15px;
+	-moz-border-radius    : 15px;
+}
+
+.matrix-resize {
+	position            : relative;
+	width               : 100px;
+	height              : 100px;
+	display             : block;
+	background-size     : 100px auto;
+	background-position : 55% 55%;
+}
+
+/* Profile portrait style */
+
+.resize-profile-img {
+	width  : 400px;
+	height : 370px;
+}
+
+.crop-profile-img {
+	position            : relative;
+	width               : 400px;
+	height              : 370px;
+	display             : block;
+	background-size     : 400px auto;
+	background-position : 55% 55%;
+}
+
+/* Party colors */
+
+.Republican {
+	background-color : #E63946;
+	border           : #E63946;
+}
+
+.Democrat {
+	background-color : #1A7EB3;
+	border           : #1A7EB3;
+}
+
+.Independent,
+.unknown,
+.Unknown,
+.Nonpartisan {
+	background-color : #EAE651;
+	border           : #EAE651;
+}
+
+/* Party borders */
+
+.feature {
+	border-style: solid;
+	border-width: 3px;
+}
+
+.matrix {
+	border-style: solid;
+	border-width: 2px;
+}
+
+.badge {
+	border-style: solid;
+	border-width: 1px;
+}
+
+.right {
+	display: block;
+	position: relative;
+	float: right;
+}
+
+.down {
+	position: absolute;
+	bottom: 0;
+}
+.grid-list {
+	list-style-type : none;
+	list-style      : none;
+}
+
+.centered {
+	position     : absolute;
+	display      : block;
+	width        : 500px;
+	margin-left  : auto;
+	margin-right : auto;
+	top          : 40%;
+	left         : 50%;
+	transform    : translate(-50%, -50%);
+}
+
+.search-button {
+	position          : relative; left : 30px;
+	width             : 40px;
+	height            : 40px;
+	background-repeat : no-repeat;
+	background-size   : 40px;
+}
+
+.search-bar {
+	position       : relative;
+	left           : 20px;
+	text-align     : center;
+	font-family    : 'Scope One', serif;
+	font-size      : 130%;
+	letter-spacing : 4px;
+}
+
+.comments-bar {
+	font-family    : 'Scope One', serif;
+	font-size      : 110%;
+	letter-spacing : 2px;
+}
+
+.err {
+	position       : relative;
+	left           : 10px;
+	text-align     : center;
+}
+
+.menu-search {
+  float: right;
+  margin-top: 15px;
+  height: 24px }
+
+.head {
+	font-family : 'Cutive', serif;
+	color       : #FF530D
+}
+
+.graff-smaller {
+	font-size: 75%;
+	font-family : 'Scope One', serif;
+}
+
+.graff {
+	font-family : 'Scope One', serif;
+}
+
+#commentBlock {
+	background-color: white;
+	line-height: 20px;
+}
+
+#nothin {
+	background-color: none;
+}
+
+#commentUser {
+	font-weight: bold;
+}
+
+#commentTime {
+	color: grey;
+}

@@ -3,3 +3,9 @@
 /client/lib
 
 uri-config.js
+
+.env
+
+/server/secret
+
+client/images/maps

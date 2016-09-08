@@ -1,0 +1,43 @@
+<div data-ng-controller="BillSummary" data-ng-init="getBillSum()">
+
+  <div class="title-bar" style="height: 35px">
+    <div class="left">
+		<div class="head link" data-ng-click="goHome()"><img src="images/fox-orange.svg" width="18px"> Foxcove</div>
+    </div>
+    <div class="right">
+        <input type="text" placeholder="try another ZIP" class="large-4 medium-5 small-6 columns graff" style="float: right; margin-top: 15px; height: 24px; font-size: 85%" data-ng-model="location" data-ng-pattern="/^\d{5}$/" data-ng-controller="HomeController" data-ng-enter="submit()">
+    </div>
+  </div>
+  <div class="row medium-8 large-7 columns graff" style="margin-top: 1rem;">
+    <div class="blog-post">
+      <h4 class="head">{{billTitle  || altTitle}}</h4> <small data-ng-if="introDate">Introduced: {{introDate | date}}</small>
+      <div class="callout">
+        <p>
+          <span class="head" data-ng-if="officialIntro">Official Desciption:</span> {{officialIntro}}
+          <!--<span class="head" data-ng-if="!officialIntro">Sorry, we have no official description for this bill.</span>-->
+        </p>
+        <p>
+          <span class="head" data-ng-if="summaryFragments">Bill Summary</span>
+          <!--<span class="head" data-ng-if="!summaryFragments">Sorry, we have no official description for this bill.</span>-->
+        </p>
+        <div data-ng-repeat="summaryFragment in summaryFragments">
+          <p data-ng-bind-html="summaryFragment"> {{ summaryFragment }} </p>
+        </div>
+			</div>
+      <div>
+        <p>
+				  <span data-ng-click="loadProfile(sponsor)" data-ng-if="sponsor">
+					  Sponsored by <span class="link" style="font-weight: 600">{{sponsor.firstname}} {{sponsor.lastname}} ({{sponsor_role.description}})</span>
+				  </span>
+				  <p data-ng-if="cosponsors.length > 0">Cosponsors:
+            <span class="link" ng-repeat="cosponsor in cosponsors" data-ng-click="loadProfile(cosponsor)" data-ng-class="{active : isSelected(cosponsor)}">
+              {{cosponsor.firstname}} {{cosponsor.lastname}}&nbsp;&nbsp;
+            </span>
+          </p>
+				</p>
+      </div>
+      <!--Comments-->
+        <div class="comments float-center" ui-view="comments"></div>
+      <!--Comments-->
+    </div>
+	</div>

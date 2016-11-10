@@ -29,7 +29,7 @@ angular.module('app.helperFactories', [])
         console.log(error);
       });
   }
-
+  
   function getRepSponsorshipHistory(bioguide_id) {
     return $http.post('/sponsorship', bioguide_id)
       .then(function(response) {

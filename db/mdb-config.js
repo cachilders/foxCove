@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
-mongoose.connect(process.env.MONGO_DB_URI);
+mongoose.connect(process.env.MONGODB_URI);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Something went wrong with MongoDB.'));

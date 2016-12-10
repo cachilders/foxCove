@@ -4,17 +4,17 @@ angular.module('app.personProfile',[])
 
   $scope.build = function() {
     var person = $state.params;
-    // if (person.leg_id && person.leg_id.match(/\w{1,3}\d{6}/) !== null) {
-    //   StateRepProfile.getRepFromLegId(person)
-    //     .then(function(results) {
-    //       $scope.rep = results;
-    //       $scope.rep.img = results.photo_url;
-    //       $scope.rep.firstname = results.firstname || results.first_name;
-    //       $scope.rep.lastname = results.lastname || results.last_name;
-    //       $scope.getBio($scope.rep);
-    //       $scope.getStateRepBills(person);
-    //     });
-    // } else
+    if (person.leg_id && person.leg_id.match(/\w{1,3}\d{6}/) !== null) {
+      StateRepProfile.getRepFromLegId(person)
+        .then(function(results) {
+          $scope.rep = results;
+          $scope.rep.img = results.photo_url;
+          $scope.rep.firstname = results.firstname || results.first_name;
+          $scope.rep.lastname = results.lastname || results.last_name;
+          $scope.getBio($scope.rep);
+          $scope.getStateRepBills(person);
+        });
+    } else
     if (person.bioguide_id && person.bioguide_id.match(/\w{1}\d{6}/) !== null) {
       RepProfile.getRepFromBioId(person)
         .then(function(results){

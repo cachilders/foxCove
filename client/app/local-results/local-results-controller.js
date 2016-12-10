@@ -65,14 +65,14 @@ angular.module('app.localResults', [])
           LocalMap.getMapFromGeo($scope.geo, function(results) {
             $scope.map = 'images/maps/' + results;
           });
+        })
+        .then(function() {
+          StateLeg.getStateLegsFromGeo($scope.geo)
+            .then(function(results) {
+              $scope.stateLegs = results.data; // Todo — Sort out what gives with the factory objects for all of these.
+              $scope.state = results.state.toUpperCase();
+            });
         });
-        // .then(function() {
-        //   StateLeg.getStateLegsFromGeo($scope.geo)
-        //     .then(function(results) {
-        //       $scope.stateLegs = results.data; // Todo — Sort out what gives with the factory objects for all of these.
-        //       $scope.state = results.state.toUpperCase();
-        //     });
-        // });
     } else {
       $scope.nope(); // Redirect to error message state
     }
